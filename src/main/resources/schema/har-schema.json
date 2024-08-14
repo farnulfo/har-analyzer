@@ -1,0 +1,626 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "HAR JSON schema",
+  "type": "object",
+  "properties": {
+    "log": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string"
+        },
+        "creator": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "version": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "name",
+            "version"
+          ]
+        },
+        "pages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "startedDateTime": {
+                "type": "string"
+              },
+              "id": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "pageTimings": {
+                "type": "object",
+                "properties": {
+                  "onContentLoad": {
+                    "type": "number"
+                  },
+                  "onLoad": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "onContentLoad",
+                  "onLoad"
+                ]
+              }
+            },
+            "required": [
+              "startedDateTime",
+              "id",
+              "title",
+              "pageTimings"
+            ]
+          }
+        },
+        "entries": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "_initiator": {
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "lineNumber": {
+                    "type": "number"
+                  },
+                  "stack": {
+                    "type": "object",
+                    "properties": {
+                      "callFrames": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "functionName": {
+                              "type": "string"
+                            },
+                            "scriptId": {
+                              "type": "string"
+                            },
+                            "url": {
+                              "type": "string"
+                            },
+                            "lineNumber": {
+                              "type": "number"
+                            },
+                            "columnNumber": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "functionName",
+                            "scriptId",
+                            "url",
+                            "lineNumber",
+                            "columnNumber"
+                          ]
+                        }
+                      },
+                      "parent": {
+                        "type": "object",
+                        "properties": {
+                          "description": {
+                            "type": "string"
+                          },
+                          "callFrames": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "functionName": {
+                                  "type": "string"
+                                },
+                                "scriptId": {
+                                  "type": "string"
+                                },
+                                "url": {
+                                  "type": "string"
+                                },
+                                "lineNumber": {
+                                  "type": "number"
+                                },
+                                "columnNumber": {
+                                  "type": "number"
+                                }
+                              },
+                              "required": [
+                                "functionName",
+                                "scriptId",
+                                "url",
+                                "lineNumber",
+                                "columnNumber"
+                              ]
+                            }
+                          },
+                          "parent": {
+                            "type": "object",
+                            "properties": {
+                              "description": {
+                                "type": "string"
+                              },
+                              "callFrames": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "functionName": {
+                                      "type": "string"
+                                    },
+                                    "scriptId": {
+                                      "type": "string"
+                                    },
+                                    "url": {
+                                      "type": "string"
+                                    },
+                                    "lineNumber": {
+                                      "type": "number"
+                                    },
+                                    "columnNumber": {
+                                      "type": "number"
+                                    }
+                                  },
+                                  "required": [
+                                    "functionName",
+                                    "scriptId",
+                                    "url",
+                                    "lineNumber",
+                                    "columnNumber"
+                                  ]
+                                }
+                              },
+                              "parent": {
+                                "type": "object",
+                                "properties": {
+                                  "description": {
+                                    "type": "string"
+                                  },
+                                  "callFrames": {
+                                    "type": "array",
+                                    "items": {
+                                      "type": "object",
+                                      "properties": {
+                                        "functionName": {
+                                          "type": "string"
+                                        },
+                                        "scriptId": {
+                                          "type": "string"
+                                        },
+                                        "url": {
+                                          "type": "string"
+                                        },
+                                        "lineNumber": {
+                                          "type": "number"
+                                        },
+                                        "columnNumber": {
+                                          "type": "number"
+                                        }
+                                      },
+                                      "required": [
+                                        "functionName",
+                                        "scriptId",
+                                        "url",
+                                        "lineNumber",
+                                        "columnNumber"
+                                      ]
+                                    }
+                                  },
+                                  "parent": {
+                                    "type": "object",
+                                    "properties": {
+                                      "description": {
+                                        "type": "string"
+                                      },
+                                      "callFrames": {
+                                        "type": "array",
+                                        "items": {
+                                          "type": "object",
+                                          "properties": {
+                                            "functionName": {
+                                              "type": "string"
+                                            },
+                                            "scriptId": {
+                                              "type": "string"
+                                            },
+                                            "url": {
+                                              "type": "string"
+                                            },
+                                            "lineNumber": {
+                                              "type": "number"
+                                            },
+                                            "columnNumber": {
+                                              "type": "number"
+                                            }
+                                          },
+                                          "required": [
+                                            "functionName",
+                                            "scriptId",
+                                            "url",
+                                            "lineNumber",
+                                            "columnNumber"
+                                          ]
+                                        }
+                                      }
+                                    },
+                                    "required": [
+                                      "description",
+                                      "callFrames"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "description",
+                                  "callFrames"
+                                ]
+                              }
+                            },
+                            "required": [
+                              "description",
+                              "callFrames",
+                              "parent"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "description",
+                          "callFrames",
+                          "parent"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "callFrames"
+                    ]
+                  }
+                },
+                "required": [
+                  "type"
+                ]
+              },
+              "_priority": {
+                "type": "string"
+              },
+              "_resourceType": {
+                "type": "string"
+              },
+              "cache": {
+                "type": "object",
+                "properties": {},
+                "required": []
+              },
+              "connection": {
+                "type": "string"
+              },
+              "pageref": {
+                "type": "string"
+              },
+              "request": {
+                "type": "object",
+                "properties": {
+                  "method": {
+                    "type": "string"
+                  },
+                  "url": {
+                    "type": "string"
+                  },
+                  "httpVersion": {
+                    "type": "string"
+                  },
+                  "headers": { "$ref": "#/$defs/name_value" },
+                  "queryString": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "value"
+                      ]
+                    }
+                  },
+                  "cookies": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        },
+                        "path": {
+                          "type": "string"
+                        },
+                        "domain": {
+                          "type": "string"
+                        },
+                        "expires": {
+                          "type": "string"
+                        },
+                        "httpOnly": {
+                          "type": "boolean"
+                        },
+                        "secure": {
+                          "type": "boolean"
+                        },
+                        "sameSite": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "value",
+                        "path",
+                        "domain",
+                        "expires",
+                        "httpOnly",
+                        "secure"
+                      ]
+                    }
+                  },
+                  "headersSize": {
+                    "type": "number"
+                  },
+                  "bodySize": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "method",
+                  "url",
+                  "httpVersion",
+                  "headers",
+                  "queryString",
+                  "cookies",
+                  "headersSize",
+                  "bodySize"
+                ]
+              },
+              "response": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "number"
+                  },
+                  "statusText": {
+                    "type": "string"
+                  },
+                  "httpVersion": {
+                    "type": "string"
+                  },
+                  "headers": { "$ref": "#/$defs/name_value" },
+                  "cookies": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "value": {
+                          "type": "string"
+                        },
+                        "path": {
+                          "type": "string"
+                        },
+                        "domain": {
+                          "type": "string"
+                        },
+                        "expires": {
+                          "type": "string"
+                        },
+                        "httpOnly": {
+                          "type": "boolean"
+                        },
+                        "secure": {
+                          "type": "boolean"
+                        },
+                        "sameSite": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "value",
+                        "path",
+                        "domain",
+                        "expires",
+                        "httpOnly",
+                        "secure",
+                        "sameSite"
+                      ]
+                    }
+                  },
+                  "content": {
+                    "type": "object",
+                    "properties": {
+                      "size": {
+                        "type": "number"
+                      },
+                      "mimeType": {
+                        "type": "string"
+                      },
+                      "text": {
+                        "type": "string"
+                      },
+                      "encoding": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "size",
+                      "mimeType",
+                      "text"
+                    ]
+                  },
+                  "redirectURL": {
+                    "type": "string"
+                  },
+                  "headersSize": {
+                    "type": "number"
+                  },
+                  "bodySize": {
+                    "type": "number"
+                  },
+                  "_transferSize": {
+                    "type": "number"
+                  },
+                  "_error": {},
+                  "_fetchedViaServiceWorker": {
+                    "type": "boolean"
+                  }
+                },
+                "required": [
+                  "status",
+                  "statusText",
+                  "httpVersion",
+                  "headers",
+                  "cookies",
+                  "content",
+                  "redirectURL",
+                  "headersSize",
+                  "bodySize",
+                  "_transferSize",
+                  "_error",
+                  "_fetchedViaServiceWorker"
+                ]
+              },
+              "serverIPAddress": {
+                "type": "string"
+              },
+              "startedDateTime": {
+                "type": "string"
+              },
+              "time": {
+                "type": "number"
+              },
+              "timings": {
+                "type": "object",
+                "properties": {
+                  "blocked": {
+                    "type": "number"
+                  },
+                  "dns": {
+                    "type": "number"
+                  },
+                  "ssl": {
+                    "type": "number"
+                  },
+                  "connect": {
+                    "type": "number"
+                  },
+                  "send": {
+                    "type": "number"
+                  },
+                  "wait": {
+                    "type": "number"
+                  },
+                  "receive": {
+                    "type": "number"
+                  },
+                  "_blocked_queueing": {
+                    "type": "number"
+                  },
+                  "_workerStart": {
+                    "type": "number"
+                  },
+                  "_workerReady": {
+                    "type": "number"
+                  },
+                  "_workerFetchStart": {
+                    "type": "number"
+                  },
+                  "_workerRespondWithSettled": {
+                    "type": "number"
+                  }
+                },
+                "required": [
+                  "blocked",
+                  "dns",
+                  "ssl",
+                  "connect",
+                  "send",
+                  "wait",
+                  "receive",
+                  "_blocked_queueing",
+                  "_workerStart",
+                  "_workerReady",
+                  "_workerFetchStart",
+                  "_workerRespondWithSettled"
+                ]
+              },
+              "_fromCache": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "_initiator",
+              "_priority",
+              "_resourceType",
+              "cache",
+              "pageref",
+              "request",
+              "response",
+              "serverIPAddress",
+              "startedDateTime",
+              "time",
+              "timings"
+            ]
+          }
+        }
+      },
+      "required": [
+        "version",
+        "creator",
+        "pages",
+        "entries"
+      ]
+    }
+  },
+  "required": [
+    "log"
+  ],
+  "$defs": {
+    "name_value": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "value"
+        ]
+      }
+    }
+  }
+}
